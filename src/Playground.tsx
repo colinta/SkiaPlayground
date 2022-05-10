@@ -21,12 +21,15 @@ type Props = {
 };
 
 function startRandAnimation(
+  debug: string,
+  count: number,
   value: SkiaValue<number>,
   clamp: Clamp,
   desired: number = 1,
 ) {
   runTiming(value, desired, {duration: randIn([1000, 2000])}, () => {
-    startRandAnimation(value, clamp, randIn(clamp));
+    console.log(`generating ${debug} #${count}`);
+    startRandAnimation(debug, count + 1, value, clamp, randIn(clamp));
   });
 }
 
@@ -34,7 +37,7 @@ function randIn(clamp: Clamp) {
   return Math.floor(clamp[0] + Math.random() * (clamp[1] - clamp[0]));
 }
 
-function useRGB(clamp: Clamp = [0, 256]) {
+function useRGB(debug: string, clamp: Clamp = [0, 256]) {
   const red = useValue(randIn(clamp));
   const green = useValue(randIn(clamp));
   const blue = useValue(randIn(clamp));
@@ -43,9 +46,9 @@ function useRGB(clamp: Clamp = [0, 256]) {
     [red, green, blue],
   );
   useEffect(() => {
-    startRandAnimation(red, clamp, red.current);
-    startRandAnimation(green, clamp, green.current);
-    startRandAnimation(blue, clamp, blue.current);
+    startRandAnimation(`${debug}-red`, 0, red, clamp, red.current);
+    startRandAnimation(`${debug}-green`, 0, green, clamp, green.current);
+    startRandAnimation(`${debug}-blue`, 0, blue, clamp, blue.current);
   }, []);
 
   return rgb;
@@ -59,10 +62,10 @@ export default function Playground({size}: Props) {
   const r = Math.min(width, height) / 4;
 
   // animate one circle's colors
-  const rgb0 = useRGB([0, 256]);
-  const rgb1 = useRGB([64, 256]);
-  const rgb2 = useRGB([128, 256]);
-  const bg = useRGB([192, 256]);
+  const rgb0 = useRGB('top', [0, 256]);
+  const rgb1 = useRGB('left', [64, 256]);
+  const rgb2 = useRGB('right', [128, 256]);
+  const bg = useRGB('background', [192, 256]);
 
   return (
     <>
