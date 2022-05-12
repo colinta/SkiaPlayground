@@ -1,0 +1,7 @@
+points svg
+triangles svg
+animate simplex noise with clock value
+make each point a different color
+make each triangle a different color
+gradient using vertices
+pin edges by using seed index

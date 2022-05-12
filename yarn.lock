@@ -1271,10 +1271,10 @@
   resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-2.0.0.tgz#4c40b74655c83982c8cf47530ee7dc13d957b6aa"
   integrity sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==
 
-"@shopify/react-native-skia@^0.1.123":
-  version "0.1.123"
-  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.123.tgz#eaaf886cf1ca3b49f4ba79b826cd4b8f803b933e"
-  integrity sha512-Yn9nHYRuTz84eCbHbpTi8VbP33tQc1D6rDQNEj7fgV6aPusaN79XjnnxtPsZsO+nLlbkpI3q1x+2Ds3Qu1I8ZA==
+"@shopify/react-native-skia@^0.1.128":
+  version "0.1.128"
+  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.128.tgz#caf0d7948beb74646505065fb9f6c3a37b7d7aa6"
+  integrity sha512-oknOk4eSrbnhDZCju/4nDEsVbgEjmswvPjYCgtUbjZ2IwciuZ2bMi23yjZ5sI/QD7Y6p0Lz3yYQPADcEUr3x3w==
   dependencies:
     react-reconciler "^0.26.2"
 
