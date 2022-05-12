@@ -1,0 +1,8 @@
+Rect with background color
+Circle
+Circles
+Generate random background color - this rgb string is all we need to animate color
+Switch to a *derived value*
+Animate it with startTiming (imperative) or useTiming (`const blue = useTiming({from: randColor(), to: randColor()},{duration: randIn(10000, 20000)})`)
+Loop animation
+Animate all colors
