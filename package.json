@@ -12,7 +12,8 @@
   "dependencies": {
     "@shopify/react-native-skia": "^0.1.123",
     "react": "17.0.2",
-    "react-native": "0.68.1"
+    "react-native": "0.68.1",
+    "simplex-noise": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
