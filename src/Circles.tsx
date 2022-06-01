@@ -1,19 +1,14 @@
 import React, {useEffect} from 'react';
-import type {SkiaValue} from '@shopify/react-native-skia';
+import type {Size, SkiaValue} from '@shopify/react-native-skia';
 import {
+  Group,
   Canvas,
   Circle,
-  Group,
   Rect,
-  runTiming,
   useDerivedValue,
   useValue,
+  runTiming,
 } from '@shopify/react-native-skia';
-
-type Size = {
-  width: number;
-  height: number;
-};
 
 type Props = {
   size: Size;
