@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@shopify/react-native-skia": "^0.1.123",
+    "@shopify/react-native-skia": "^0.1.128",
     "react": "17.0.2",
     "react-native": "0.68.1",
     "simplex-noise": "^3.0.1"
