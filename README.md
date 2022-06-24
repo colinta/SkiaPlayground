@@ -1,3 +1,9 @@
+To compile the app:
+
+```
+yarn ios
+```
+
 A bare bones repo to help get you started. This repo was created using:
 
 ```
