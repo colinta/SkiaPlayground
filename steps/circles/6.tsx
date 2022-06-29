@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import type {Size, SkiaValue} from '@shopify/react-native-skia';
+import type {Size, SkiaMutableValue} from '@shopify/react-native-skia';
 import {
   Group,
   Canvas,
@@ -19,7 +19,10 @@ function randIn(lower: number, upper: number) {
   return Math.round(lower + Math.random() * (upper - lower));
 }
 
-function startAnimation(value: SkiaValue<number>, randColor: () => number) {
+function startAnimation(
+  value: SkiaMutableValue<number>,
+  randColor: () => number,
+) {
   runTiming(value, randColor(), {duration: randIn(10000, 20000)});
 }
 
@@ -35,7 +38,7 @@ function useRGB(randColor: () => number) {
   }, []);
   const blue = useTiming(
     {from: randColor(), to: randColor()},
-    {duration: randIn(10000, 20000)},
+    {duration: randIn(1000, 2000)},
   );
 
   return useDerivedValue(

@@ -26,9 +26,9 @@ export default function Circles({size}: Props) {
   const r = Math.min(width, height) / 4;
 
   const bg = useRGB(() => randColor(200));
-  const color0 = 'rgb(128, 64, 128)';
-  const color1 = 'rgb(64, 128, 128)';
-  const color2 = 'rgb(128, 128, 64)';
+  const color0 = useRGB(() => randColor(200));
+  const color1 = useRGB(() => randColor(200));
+  const color2 = useRGB(() => randColor(200));
 
   return (
     <Canvas style={{flex: 1}}>

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import type {Size, SkiaValue} from '@shopify/react-native-skia';
+import type {Size, SkiaMutableValue} from '@shopify/react-native-skia';
 import {
   Group,
   Canvas,
@@ -18,8 +18,11 @@ function randIn(lower: number, upper: number) {
   return Math.round(lower + Math.random() * (upper - lower));
 }
 
-function startAnimation(value: SkiaValue<number>, randColor: () => number) {
-  runTiming(value, randColor(), {duration: randIn(2000, 4000)}, () => {
+function startAnimation(
+  value: SkiaMutableValue<number>,
+  randColor: () => number,
+) {
+  runTiming(value, randColor(), {duration: randIn(5000, 10000)}, () => {
     startAnimation(value, randColor);
   });
 }
@@ -48,10 +51,13 @@ export default function Circles({size}: Props) {
   const cy = height / 2;
   const r = Math.min(width, height) / 4;
 
-  const bg = useRGB(() => randIn(100, 255));
-  const color0 = 'rgb(128, 64, 128)';
-  const color1 = 'rgb(64, 128, 128)';
-  const color2 = 'rgb(128, 128, 64)';
+  const bg = `rgb(${randIn(200, 255)}, ${randIn(200, 255)}, ${randIn(
+    200,
+    255,
+  )})`;
+  const color0 = useRGB(() => randIn(100, 255));
+  const color1 = useRGB(() => randIn(100, 255));
+  const color2 = useRGB(() => randIn(100, 255));
 
   return (
     <Canvas style={{flex: 1}}>
