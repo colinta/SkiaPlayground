@@ -1,22 +1,15 @@
 import React, {useState} from 'react';
-import {View, Button} from 'react-native';
-import Circles from './Circles';
-import Mesh from './Mesh';
-import Neumorphism from './Neumorphism';
-
-type Size = {
-  width: number;
-  height: number;
-};
-
-type Show = 'Circles' | 'Mesh' | 'Neumorphism';
+import {View} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import type {Size} from '@shopify/react-native-skia';
+// import Schedule from './upnext/Schedule';
+import Weather from './weather/Weather';
 
 export default function App() {
   const [size, setSize] = useState<Size>();
-  const [show, setShow] = useState<Show>();
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaProvider>
       <View
         style={{flex: 1}}
         onLayout={({
@@ -24,15 +17,8 @@ export default function App() {
             layout: {width, height},
           },
         }) => setSize({width, height})}>
-        {size && show === 'Circles' ? <Circles size={size} /> : null}
-        {size && show === 'Mesh' ? <Mesh size={size} /> : null}
-        {size && show === 'Neumorphism' ? <Neumorphism /> : null}
-        {size && !show ? <View style={{flex: 1}} /> : null}
+        {size ? <Weather size={size} /> : null}
       </View>
-      <Button title="Circles" onPress={() => setShow('Circles')} />
-      <Button title="Mesh" onPress={() => setShow('Mesh')} />
-      <Button title="Neumorphism" onPress={() => setShow('Neumorphism')} />
-      <Button title="" onPress={() => {}} />
-    </View>
+    </SafeAreaProvider>
   );
 }

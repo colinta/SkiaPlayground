@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@shopify/react-native-skia": "0.1.153",
-    "react": "17.0.2",
-    "react-native": "0.69",
+    "react": "18.0.0",
+    "react-native": "0.69.3",
     "react-native-safe-area-context": "^4.3.1",
     "simplex-noise": "^3.0.1"
   },
