@@ -5,12 +5,13 @@
   "scripts": {
     "all": "yarn && cd ios/ && pod install && cd ..",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator='iPhone 14'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "https://github.com/colinta/react-native-geolocation",
     "@shopify/react-native-skia": "0.1.153",
     "react": "18.0.0",
     "react-native": "0.69.3",
